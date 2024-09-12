@@ -12,12 +12,12 @@ int main() {
     scanf("%d", &capacity);
 
     //handle case where the number of elements is zero or negative
-    if (capacity == 0 || capacity < 0)
+    if (capacity <= 0)
     {
        return 1;
     }
     //dynamically allocate memory
-    array = (int *)malloc(capacity);
+    array = (int *)malloc(capacity * sizeof(int));
 
     //exception handling
     if(array == NULL){
@@ -35,8 +35,7 @@ int main() {
     //print the integers in reverse order
     printf("\nThese are the integers in reverse order: ");
 
-    int length = sizeof(array)/sizeof(array[0]);
-    for(int i = length; i >= 0; i--){
+    for(int i = capacity - 1; i >= 0; i--){
         printf("%d " , array[i]);
     }printf("\n");
 
